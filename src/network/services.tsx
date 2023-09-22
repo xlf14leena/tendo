@@ -20,7 +20,7 @@ export const fetchAppointmentData = async () => {
         tokenMap.set("\[Diagnosis\]", diagnosis);/* eslint-disable-line */
         return { providerId, tokenMap };
     } else {
-        throw new Error(response.statusText);
+        throw new Error('Appointment data :' + response.statusText);
     }
 }
 
@@ -31,6 +31,6 @@ export const fetchQuestionsData = async (providerId: number) => {
         const questionsData = await response.json();
         return questionsData;
     } else {
-        throw new Error(response.statusText);
+        throw new Error('Questions data :' + response.statusText);
     }
 }

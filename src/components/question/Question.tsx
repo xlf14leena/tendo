@@ -20,16 +20,17 @@ const Question = ({ question, answer, onNextHandler, onBackHandler, hasBack, has
             <p className="question">{question.question}
                 {question.required && <span className="required">&nbsp;*</span>}
             </p>
-            <div role="radiogroup">
-                {question.type === QuestionEnum.radio &&
-                    question.choices.map((choice, index) => (
+            {question.type === QuestionEnum.radio &&
+                <div role="radiogroup">
+                    {question.choices.map((choice, index) => (
                         <div key={index} className="input_container">
                             <input id={`radio-${choice}`} name="choices" type="radio" value={choice} onChange={(e) => setSelectedAnswer(e.target.value)} checked={selectedAnswer === choice} />
                             <label htmlFor={`radio-${choice}`}>{choice}</label>
                         </div>
                     ))
-                }
-            </div>
+                    }
+                </div>
+            }
             {question.followup && selectedAnswer === 'No' &&
                 <p className="notify">A member of our team will contact you.</p>
             }

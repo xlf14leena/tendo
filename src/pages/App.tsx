@@ -36,7 +36,7 @@ function App() {
           setColor(questionsData.primaryColor);
         }
       } catch (e) {
-        setError("There was a problem fetching the data")
+        setError("There was a problem fetching the data : " + e);
       }
     }
     fetchData();
