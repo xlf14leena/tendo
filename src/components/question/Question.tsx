@@ -24,7 +24,7 @@ const Question = ({ question, answer, onNextHandler, onBackHandler, hasBack, has
                 {question.type === QuestionEnum.radio &&
                     question.choices.map((choice, index) => (
                         <div key={index} className="input_container">
-                            <input id={`radio-${choice}`} name="choices" type="radio" value={choice} onChange={(e) => setSelectedAnswer(e.target.value)} checked={selectedAnswer == choice} />
+                            <input id={`radio-${choice}`} name="choices" type="radio" value={choice} onChange={(e) => setSelectedAnswer(e.target.value)} checked={selectedAnswer === choice} />
                             <label htmlFor={`radio-${choice}`}>{choice}</label>
                         </div>
                     ))
