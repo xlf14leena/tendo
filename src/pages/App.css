@@ -1,0 +1,75 @@
+:root {
+  --primary-color: #3D9970;
+  --disabled-color: gray;
+  --app-border-color: lightgrey;
+  --app-box-shadow: rgba(0, 0, 0, 0.19);
+  --app-button-color: #fff;
+  --app-notify-color: brown;
+}
+
+.App {
+  width: 100%;
+  margin: 1rem auto;
+
+  .header {
+    border-bottom: 1px solid var(--primary-color);
+
+    & img {
+      height: 120px;
+      pointer-events: none;
+      display: block;
+      margin: auto;
+    }
+  }
+
+  .footer {
+    border-top: 1px solid var(--primary-color);
+    padding: 1rem 2rem;
+
+    & img {
+      height: 40px;
+      pointer-events: none;
+    }
+  }
+
+  .disclaimer {
+    font-style: italic;
+    color: var(--disabled-color)
+  }
+
+  .main h1 {
+    text-align: center;
+  }
+
+  .sectioncontainer {
+    padding: 1rem 2rem;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+
+  & button {
+    background: var(--primary-color);
+    color: var(--app-button-color);
+    border-radius: 9px;
+    font-size: 18px;
+    padding: 10px 30px;
+    outline: none;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+    margin: 1rem 1rem;
+  }
+}
+
+
+@media screen and (min-width: 800px) {
+  .App {
+    width: 800px;
+    border: 1px solid var(--app-border-color);
+    box-shadow: var(--app-box-shadow) 0px 10px 20px, var(--app-box-shadow) 0px 6px 6px;
+    border-radius: 4px;
+  }
+}
